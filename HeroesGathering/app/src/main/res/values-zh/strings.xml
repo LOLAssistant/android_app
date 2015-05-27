@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">英雄聚集地</string>
+
+    <string name="name">英雄聚集地</string>
+    <string name="action_settings">设置</string>
+    <string name="buttonGroups">群组</string>
+    <string name="buttonSearch">搜索</string>
+    <string name="buttonFriends">好友</string>
+    <string name="buttonMe">我</string>
+    <string name="Search">搜索</string>
+    <string name="Search1">选择大区</string>
+    <string name="Search2">选择段位</string>
+    <string name="Search3">自定义搜索</string>
+
+    <string name="Area">大区</string>
+    <string name="DanGrading">段位</string>
+    <string name="Ionian">艾欧尼亚</string>
+    <string name="Zaun">祖安</string>
+    <string name="Demacia">德玛西亚</string>
+    <string name="Noxus">诺克萨斯</string>
+    <string name="Freljord">弗雷尔卓德</string>
+    <string name="Piltover">皮尔吉沃特</string>
+    <string name="JustRule">裁决之地</string>
+    <string name="Challenger"> 最强王者</string>
+    <string name="AscendedMaster">超凡大师</string>
+    <string name="Diamond">钻石</string>
+    <string name="Platnum">白金</string>
+    <string name="Gold">黄金</string>
+    <string name="Silver">白银</string>
+    <string name="Bronze">青铜</string>
+
+    <string name="deleteTitle">删除</string>
+    <string name="deleteFriend">删除这个好友?</string>
+    <string name="leaveTitle">退出</string>
+    <string name="leaveGroup">退出该群组?</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+
+    <string name="messageTitle">信息</string>
+    <string name="message">开发中...</string>
+
+    <string name="Name">昵称：小狗</string>
+    <string name="Healthy">健康度：等级2 </string>
+    <string name="Sign">个性签名：更强</string>
+
+    <string name="loan">借出记录</string>
+    <string name="myAccount">我的账号</string>
+    <string name="record">归还记录</string>
+    <string name="state">状态</string>
+</resources>

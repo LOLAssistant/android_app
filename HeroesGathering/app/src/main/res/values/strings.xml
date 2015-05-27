@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">HeroesGathering</string>
+
+    <string name="name">Heroes Gathering</string>
+    <string name="action_settings">Settings</string>
+    <string name="buttonGroups">Group</string>
+    <string name="buttonSearch">Search</string>
+    <string name="buttonFriends">Friend</string>
+    <string name="buttonMe">Me</string>
+    <string name="Search">Search</string>
+    <string name="Search1">Select area</string>
+    <string name="Search2">Select dan grading</string>
+    <string name="Search3">Custom Search</string>
+
+    <string name="Area">Area</string>
+    <string name="DanGrading">Dan Grading</string>
+    <string name="Ionian">Ionian</string>
+    <string name="Zaun">Zaun</string>
+    <string name="Demacia">Demacia</string>
+    <string name="Noxus">Noxus</string>
+    <string name="Freljord">Freljord</string>
+    <string name="Piltover">Piltover</string>
+    <string name="JustRule">JustRule</string>
+    <string name="Challenger"> Challenger</string>
+    <string name="AscendedMaster">Ascended master</string>
+    <string name="Diamond">Diamond</string>
+    <string name="Platnum">Platnum</string>
+    <string name="Gold">Gold</string>
+    <string name="Silver">Silver</string>
+    <string name="Bronze">Bronze</string>
+
+    <string name="deleteTitle">Delete</string>
+    <string name="deleteFriend">Delete this friend?</string>
+    <string name="leaveTitle">Leave</string>
+    <string name="leaveGroup">Leave this group?</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="messageTitle">Message</string>
+    <string name="message">Developing...</string>
+
+    <string name="title_activity_area">AreaActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_dan_grading">DanGradingActivity</string>
+    <string name="title_activity_custom">CustomActivity</string>
+
+
+    <string name="Name">Name：Uzi </string>
+    <string name="Healthy">Healthy：LEVEL 2 </string>
+    <string name="Sign">Sign：Nice！ </string>
+
+    <string name="loan">Loan</string>
+    <string name="myAccount">My Account</string>
+    <string name="record">Record</string>
+    <string name="state">State</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

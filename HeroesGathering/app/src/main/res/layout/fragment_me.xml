@@ -1,0 +1,93 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.xxdzz.heros_gathering.MeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView android:layout_width="294dp"
+        android:layout_height="31dp"
+        android:textSize="15sp"
+        android:gravity="center_horizontal"
+        android:text="@string/Name"
+
+        android:id="@+id/textView1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="#ff000000" />
+    <TextView android:layout_width="294dp"
+        android:layout_height="30dp"
+        android:textSize="15sp"
+        android:gravity="center_horizontal"
+        android:text="@string/Sign"
+
+        android:id="@+id/textView2"
+        android:layout_alignBottom="@+id/meImageView"
+        android:layout_alignStart="@+id/textView3"
+        android:autoText="false"
+        android:textColor="#ff000000" />
+    <TextView android:layout_width="294dp"
+        android:layout_height="30dp"
+        android:textSize="15sp"
+        android:gravity="center_horizontal"
+        android:text="@string/Healthy"
+
+        android:id="@+id/textView3"
+        android:layout_below="@+id/textView1"
+        android:layout_alignStart="@+id/textView1"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:autoText="false"
+        android:textColor="#ff000000" />
+
+    <ImageView
+        android:layout_width="91dp"
+        android:layout_height="91dp"
+        android:id="@+id/meImageView" />
+
+    <fragment
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment2"
+        android:layout_below="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/MyAccountButton"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="105dp"
+        android:text="@string/myAccount"
+        android:id="@+id/MyAccountButton"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="105dp"
+        android:text="@string/state"
+        android:id="@+id/StateButton"
+        android:layout_below="@+id/MyAccountButton"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/fragment2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="105dp"
+        android:text="@string/record"
+        android:id="@+id/RecordButton"
+        android:layout_below="@+id/StateButton"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/fragment2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="105dp"
+        android:text="@string/loan"
+        android:id="@+id/LoanButton"
+        android:layout_below="@+id/RecordButton"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/fragment2" />
+
+
+</RelativeLayout>
