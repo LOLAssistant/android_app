@@ -58,12 +58,6 @@ public class Loginfragment extends Fragment {
                         String username=usernameEditText.getText().toString();
                         String password=passwordEditText.getText().toString();
 
-                        getFragmentManager()
-                                .beginTransaction()
-                                .replace(R.id.fragment, new GroupFragment())
-                                .addToBackStack(null)
-                                .commit();
-                        //Log.i("test",username+" "+password);
                         try{
                             String pathUrl = "http://10.0.2.2:30539/login";
                             //建立连接
