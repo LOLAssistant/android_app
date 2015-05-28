@@ -1,6 +1,7 @@
 package com.leon.heroesgathering;
 
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -56,12 +58,18 @@ public class Loginfragment extends Fragment {
                         String username=usernameEditText.getText().toString();
                         String password=passwordEditText.getText().toString();
 
-                        Log.i("test",username+" "+password);
+                        getFragmentManager()
+                                .beginTransaction()
+                                .replace(R.id.fragment, new GroupFragment())
+                                .addToBackStack(null)
+                                .commit();
+                        //Log.i("test",username+" "+password);
                         try{
                             String pathUrl = "http://10.0.2.2:30539/login";
                             //建立连接
                             URL url=new URL(pathUrl);
                             HttpURLConnection httpConn=(HttpURLConnection)url.openConnection();
+
                             ////设置连接属性
                             httpConn.setDoOutput(true);//使用 URL 连接进行输出
                             httpConn.setDoInput(true);//使用 URL 连接进行输入
@@ -73,16 +81,16 @@ public class Loginfragment extends Fragment {
                             httpConn.setRequestProperty("accept", "*/*");
 
 
-                            Log.i("test","connect");
+                           // Log.i("test","connect");
                            // httpConn.connect();
                             //建立输出流，并写入数据
-                            Log.i("test","get outputStream");
+                            //Log.i("test","get outputStream");
                             OutputStream outputStream = httpConn.getOutputStream();
                             Log.i("test","write");
                             outputStream.write(("username="+ URLEncoder.encode(username,"utf-8")+"&"+"password="+password).getBytes());
                             //outputStream.write(("password="+ URLEncoder.encode(password,"utf-8")).getBytes());
                             outputStream.flush();
-                            //outputStream.close();
+                            outputStream.close();
                             //获得响应状态
                             int responseCode = httpConn.getResponseCode();
                             if(200== responseCode){//连接成功
@@ -94,14 +102,20 @@ public class Loginfragment extends Fragment {
                                 responseReader = new BufferedReader(new InputStreamReader(httpConn.getInputStream()));
 
                                 String result=responseReader.readLine();
-                                Log.i("test",result);
-                                // if(result.equals("true")){
+                                if(result.equals("true")){
 
-                                //}
-                                //responseReader.close();
-                                //tv.setText(sb.toString());
+                                    getFragmentManager()
+                                            .beginTransaction()
+                                            .replace(R.id.fragment, new GroupFragment())
+                                            .addToBackStack(null)
+                                            .commit();
+
+                                }else{
+                                    Toast.makeText(null,"用户名或密码错误",Toast.LENGTH_LONG);
+                                }
+                                httpConn.disconnect();
                             }else{
-                                Log.i("test","error");
+                                Toast.makeText(null,"服务器问题，请稍后再试",Toast.LENGTH_LONG);
                             }
 
                         }catch(Exception ex){
