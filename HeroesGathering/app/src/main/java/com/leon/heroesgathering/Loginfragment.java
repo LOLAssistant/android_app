@@ -4,6 +4,8 @@ package com.leon.heroesgathering;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +30,33 @@ import java.net.URLEncoder;
 public class Loginfragment extends Fragment {
 
 
+
+    Handler handler=new Handler(){
+
+        @Override
+        public void handleMessage(Message msg) {
+
+            switch (msg.what){
+                case 0:
+                    getFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.fragment, new GroupFragment())
+                            .addToBackStack(null)
+                            .commit();
+                    break;
+                case 1:
+                    Toast.makeText(getActivity(),"用户名或密码错误",Toast.LENGTH_LONG).show();
+                    break;
+                case 2:
+                    Toast.makeText(getActivity(),"服务器问题，请稍后再试",Toast.LENGTH_LONG).show();
+                    break;
+                default:
+                    super.handleMessage(msg);
+            }
+
+        }
+    };
+
     public Loginfragment() {
         // Required empty public constructor
     }
@@ -43,6 +72,7 @@ public class Loginfragment extends Fragment {
 
         Button loginButton=(Button)view.findViewById(R.id.login);
         Button registerButton=(Button)view.findViewById(R.id.register);
+
 
 
         loginButton.setOnClickListener(new View.OnClickListener(){
@@ -98,20 +128,16 @@ public class Loginfragment extends Fragment {
                                 String result=responseReader.readLine();
                                 if(result.equals("true")){
 
-                                    getFragmentManager()
-                                            .beginTransaction()
-                                            .replace(R.id.fragment, new GroupFragment())
-                                            .addToBackStack(null)
-                                            .commit();
+                                   handler.sendEmptyMessage(0);
 
                                 }else{
-                                    Toast.makeText(null,"用户名或密码错误",Toast.LENGTH_LONG);
+                                    handler.sendEmptyMessage(1);
                                 }
-                                httpConn.disconnect();
-                            }else{
-                                Toast.makeText(null,"服务器问题，请稍后再试",Toast.LENGTH_LONG);
-                            }
 
+                            }else{
+                                handler.sendEmptyMessage(2);
+                            }
+                            httpConn.disconnect();
                         }catch(Exception ex){
                             ex.printStackTrace();
                         }
