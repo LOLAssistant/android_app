@@ -155,7 +155,11 @@ public class Loginfragment extends Fragment {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment, new RegisterFragment())
+                        .addToBackStack(null)
+                        .commit();
             }
         });
 
